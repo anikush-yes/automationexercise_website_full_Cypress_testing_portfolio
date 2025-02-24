@@ -21,7 +21,7 @@ describe('Automation Exercise Homepage Test', () => {
     // 6. Enter name and email address
     
     cy.get('[data-qa="signup-name"]').should('be.visible').type('Alison Smith');
-    cy.get('[data-qa="signup-email"]').should('be.visible').type('Fakeeeeeee@example.com');
+    cy.get('[data-qa="signup-email"]').should('be.visible').type('Fakeee@fake.com');
 
     // 7. Click 'Signup' button
 
