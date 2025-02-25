@@ -59,3 +59,6 @@ Cypress.Commands.add('createAccount', () => {
 
     cy.wrap({ username, email, password: '123456' }).as('newUser');
 });
+
+
+import 'cypress-file-upload';
