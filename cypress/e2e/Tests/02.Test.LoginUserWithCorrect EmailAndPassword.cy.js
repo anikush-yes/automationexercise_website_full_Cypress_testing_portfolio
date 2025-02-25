@@ -25,6 +25,7 @@ describe('Login User with correct email and password', () => {
             
             cy.contains('Logout').click();
             cy.contains('a', 'Signup / Login').click();
+            cy.contains('Login to your account').should('be.visible');
             cy.get('[data-qa="login-email"]').type(user.email);
             cy.get('[data-qa="login-password"]').type(user.password);
             cy.get('[data-qa="login-button"]').click();
