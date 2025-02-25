@@ -25,10 +25,8 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 
-
-
 Cypress.Commands.add('createAccount', () => {
-    const timestamp = Date.now(); // Sukuriame unikalų laiką
+    const timestamp = Date.now(); 
     const username = `User${timestamp}`;
     const email = `test${timestamp}@example.com`;
 
@@ -59,6 +57,5 @@ Cypress.Commands.add('createAccount', () => {
     cy.contains('Account Created!').should('be.visible');
     cy.contains('Continue').click();
 
-    // **Išsaugome duomenis testui**
     cy.wrap({ username, email, password: '123456' }).as('newUser');
 });
