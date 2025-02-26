@@ -62,3 +62,13 @@ Cypress.Commands.add('createAccount', () => {
 
 
 import 'cypress-file-upload';
+
+
+
+Cypress.Commands.add('launchBrowser', () => {
+    
+        cy.visit('https://automationexercise.com/');
+        cy.url().should('eq', 'https://automationexercise.com/');
+        cy.contains('a', 'Home').should('be.visible');
+
+        });
