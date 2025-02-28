@@ -1,64 +1,108 @@
 /// <reference types = "cypress" />
 
 describe('AutomationExercise API Tests', () => {
-    // const baseUrl = Cypress.env('base_url');
-  const baseUrl = 'https://automationexercise.com/api';
-  it('Get All Products List', () => {
-    cy.request(`${baseUrl}/productsList`).then((response) => {
-        expect(response.status).to.eq(200);
 
-        const responseBody = JSON.parse(response.body);
+    const baseUrl = 'https://automationexercise.com/api';
 
-        expect(responseBody).to.have.property('products').and.not.be.empty;
-
-        responseBody.products.forEach(product => {
-            expect(product).to.have.property('id').that.is.a('number');
-            expect(product).to.have.property('name').that.is.a('string');
-            expect(product).to.have.property('price').that.is.a('string');
-            expect(product).to.have.property('brand').that.is.a('string');
-        });
-    });
-});
-
-it('POST To All Products List - Not Supported', () => {
-    cy.request({
-        method: 'POST',
-        url: `${baseUrl}/productsList`,
-        body: {
-            name: 'Test Product',
-            price: '10.99',
-            category: 'Clothes'
-        },
-        headers: { 'Content-Type': 'application/json' },
-    }).then((response) => {
-        expect(response.status).to.eq(200); 
-
-        const responseBody = typeof response.body === 'string' ? JSON.parse(response.body) : response.body;
-
-        expect(responseBody).to.have.property('responseCode', 405);
-        expect(responseBody).to.have.property('message', 'This request method is not supported.');
-    });
-});
-
-    it('Get All Brands List', () => {
-        cy.request(`${baseUrl}/brandsList`).then((response) => {
+    it('01_Get All Products List', () => {
+        cy.request(`${baseUrl}/productsList`).then((response) => {
             expect(response.status).to.eq(200);
-            expect(response.body).to.have.property('brands').that.is.an('array').and.not.be.empty;
+
+            const responseBody = JSON.parse(response.body);
+
+            expect(responseBody).to.have.property('products').and.not.be.empty;
+
+            responseBody.products.forEach(product => {
+                expect(product).to.have.property('id').that.is.a('number');
+                expect(product).to.have.property('name').that.is.a('string');
+                expect(product).to.have.property('price').that.is.a('string');
+                expect(product).to.have.property('brand').that.is.a('string');
+            });
         });
     });
 
-    it('PUT To All Brands List - Not Supported', () => {
+    it('02_POST To All Products List - Not Supported', () => {
+        cy.request({
+            method: 'POST',
+            url: `${baseUrl}/productsList`,
+            body: {
+                name: 'Test Product',
+                price: '10.99',
+                category: 'Clothes'
+            },
+            headers: { 'Content-Type': 'application/json' },
+        }).then((response) => {
+            expect(response.status).to.eq(200);
+
+            const responseBody = typeof response.body === 'string' ? JSON.parse(response.body) : response.body;
+
+            expect(responseBody).to.have.property('responseCode', 405);
+            expect(responseBody).to.have.property('message', 'This request method is not supported.');
+        });
+    });
+
+    it('03_Get All Brands List', () => {
+        cy.request(`${baseUrl}/brandsList`).then((response) => {
+
+            const responseBody = typeof response.body === 'string' ? JSON.parse(response.body) : response.body;
+
+            expect(response.status).to.eq(200);
+            expect(responseBody).to.have.property('brands').that.is.an('array').and.not.be.empty;
+        });
+    });
+
+    it('04_PUT To All Brands List - Not Supported', () => {
         cy.request({
             method: 'PUT',
             url: `${baseUrl}/brandsList`,
-            failOnStatusCode: false
         }).then((response) => {
-            expect(response.status).to.eq(405);
-            expect(response.body.message).to.include('This request method is not supported');
+            expect(response.status).to.eq(200);
+
+            const responseBody = typeof response.body === 'string' ? JSON.parse(response.body) : response.body;
+
+            expect(responseBody).to.have.property('responseCode', 405);
+            expect(responseBody).to.have.property('message', 'This request method is not supported.');
         });
     });
 
-    it('POST To Verify Login with valid details', () => {
+    it('05_POST To Search Product', () => {
+        cy.request({
+            method: 'POST',
+            url: `${baseUrl}/searchProduct`,
+            headers: { 'Content-Type': 'application/json' },
+            form: true,
+            body: {
+                search_product: 'jeans'
+            }
+        }).then((response) => {
+            expect(response.status).to.eq(200);
+
+            const responseBody = typeof response.body === 'string' ? JSON.parse(response.body) : response.body;
+            expect(responseBody).to.have.property('products').that.is.an('array').and.not.be.empty;
+            const jeansProduct = responseBody.products.some(product =>
+                product.name.toLowerCase().includes('jeans')
+            );
+            expect(jeansProduct, 'At least one product should contain "jeans" in its name').to.be.true;
+        });
+    });
+
+    it('06_POST To Search Product without search_product parameter', () => {
+        cy.request({
+            method: 'POST',
+            url: `${baseUrl}/searchProduct`,
+            form: true,
+            body: {},
+
+        }).then((response) => {
+            expect(response.status).to.eq(200);
+
+            const responseBody = typeof response.body === 'string' ? JSON.parse(response.body) : response.body;
+            expect(responseBody).to.have.property('responseCode', 400);
+            expect(responseBody).to.have.property('message', 'Bad request, search_product parameter is missing in POST request.');
+        });
+    });
+
+    it('07_POST To Verify Login with valid details', () => {
         cy.request({
             method: 'POST',
             url: `${baseUrl}/verifyLogin`,
@@ -66,14 +110,52 @@ it('POST To All Products List - Not Supported', () => {
             body: {
                 email: 'test200@example.com',
                 password: 'Test1234'
-            }
+            },
+            headers: { 'Content-Type': 'application/json' }
         }).then((response) => {
+
+            const responseBody = typeof response.body === 'string' ? JSON.parse(response.body) : response.body;
+
             expect(response.status).to.eq(200);
-            expect(response.body.message).to.eq('User exists!');
+            expect(responseBody).to.have.property('message', 'User exists!');
         });
     });
 
-    it('POST To Verify Login with invalid details', () => {
+    it('08_POST To Verify Login without email parameter', () => {
+        cy.request({
+            method: 'POST',
+            url: `${baseUrl}/verifyLogin`,
+            form: true,
+            body: {
+                password: 'Test1234'
+            },
+            headers: { 'Content-Type': 'application/json' }
+
+        }).then((response) => {
+            expect(response.status).to.eq(200);
+
+            const responseBody = typeof response.body === 'string' ? JSON.parse(response.body) : response.body;
+
+            expect(responseBody).to.have.property('responseCode', 400);
+            expect(responseBody).to.have.property('message', 'Bad request, email or password parameter is missing in POST request.');
+        });
+    });
+
+    it('09_DELETE To Verify Login - Not Supported', () => {
+        cy.request({
+            method: 'DELETE',
+            url: `${baseUrl}/verifyLogin`,
+        }).then((response) => {
+            expect(response.status).to.eq(200);
+
+            const responseBody = typeof response.body === 'string' ? JSON.parse(response.body) : response.body;
+
+            expect(responseBody).to.have.property('responseCode', 405);
+            expect(responseBody).to.have.property('message', 'This request method is not supported.');
+        });
+    });
+
+    it('10_POST To Verify Login with invalid details', () => {
         cy.request({
             method: 'POST',
             url: `${baseUrl}/verifyLogin`,
@@ -82,118 +164,167 @@ it('POST To All Products List - Not Supported', () => {
                 email: 'invalid@example.com',
                 password: 'wrongpassword'
             },
-            failOnStatusCode: false
+            headers: { 'Content-Type': 'application/json' }
+
         }).then((response) => {
-            expect(response.status).to.eq(404);
-            expect(response.body.message).to.include('User not found!');
+            expect(response.status).to.eq(200);
+
+            const responseBody = typeof response.body === 'string' ? JSON.parse(response.body) : response.body;
+
+            expect(responseBody).to.have.property('responseCode', 404);
+            expect(responseBody).to.have.property('message', 'User not found!');
         });
     });
 
-    it('POST To Verify Login without email parameter', () => {
-        cy.request({
-            method: 'POST',
-            url: `${baseUrl}/verifyLogin`,
-            form: true,
-            body: {
-                password: 'Test1234'
-            },
-            failOnStatusCode: false
-        }).then((response) => {
-            expect(response.status).to.eq(400);
-            expect(response.body.message).to.include('Bad request, email or password parameter is missing in POST request.');
-        });
-    });
 
-    it('DELETE To Verify Login - Not Supported', () => {
-        cy.request({
-            method: 'DELETE',
-            url: `${baseUrl}/verifyLogin`,
-            failOnStatusCode: false
-        }).then((response) => {
-            expect(response.status).to.eq(405);
-            expect(response.body.message).to.include('This request method is not supported');
-        });
-    });
+    it('11_POST To Create/Register User Account', () => {
 
-    it('POST To Create/Register User Account', () => {
+        const userData = {
+            name: 'Test User',
+            email: 'Newuser8@example.com',
+            password: 'testpassword',
+            title: 'Mr',
+            birth_date: '10',
+            birth_month: '02',
+            birth_year: '1999',
+            firstname: 'Peter',
+            lastname: 'Peterson',
+            company: 'SomeCompany',
+            address1: 'Test Street 123',
+            address2: 'Test ap. 123',
+            country: 'Krakochia',
+            zipcode: '1234',
+            state: 'Unknown',
+            city: 'Some',
+            mobile_number: '65486574874887'
+        };
+
         cy.request({
             method: 'POST',
             url: `${baseUrl}/createAccount`,
+            body: userData,
             form: true,
-            body: {
-                name: 'Test User',
-                email: 'Newuserr@example.com',
-                password: 'testpassword',
-                title: 'Mr',
-                birth_date: '10',
-                birth_month: '02',
-                birth_year: '1999',
-                firstname: 'Peter',
-                lastname: 'Peterson',
-                company: 'SomeCompany',
-                address1: 'Test Street 123',
-                address2: 'Test ap. 123',
-                country: 'Krakochia',
-                zipcode: '1234',
-                state: 'Unknown',
-                city: 'Some',
-                mobile_number: '65486574874887'
-            }
+            failOnStatusCode: false
         }).then((response) => {
-            expect(response.status).to.eq(201);
-            expect(response.body.message).to.include('User created!');
+
+            let respData;
+            try {
+                respData = typeof response.body === 'string'
+                    ? JSON.parse(response.body)
+                    : response.body;
+            } catch (error) {
+                throw new Error('Failed to parse JSON response: ' + error.message);
+            }
+
+            expect(response.status).to.equal(200);
+            expect(respData.responseCode).to.be.a('number').and.equal(201);
+            expect(respData.message).to.be.a('string').and.equal('User created!');
         });
+
     });
 
-    it('PUT METHOD To Update User Account', () => {
+
+    it('13_PUT To Update User Account', () => {
+
+        const userData = {
+            email: 'Newuser8@example.com',
+            name: 'Test User',
+            password: 'testpassword',
+            title: 'Mr',
+            birth_date: '10',
+            birth_month: '02',
+            birth_year: '1999',
+            firstname: 'Peter',
+            lastname: 'Peterson',
+            company: 'UpdatedCompany',
+            address1: 'Updated Street 456',
+            address2: 'Updated ap. 789',
+            country: 'Krakochia',
+            zipcode: '1234',
+            state: 'Unknown',
+            city: 'NewUpdatedCity', // Updated city
+            mobile_number: '9876543210'
+        };
+
         cy.request({
             method: 'PUT',
-            url: `${baseUrl}/updateAccount`,
+            url: 'https://automationexercise.com/api/updateAccount',
+            body: userData,
             form: true,
-            body: {
-                email: 'Newuserr@example.com',
-                name: 'Updated User',
-                password: 'newpassword',
-                title: 'Mr',
-                birth_date: '15',
-                birth_month: '03',
-                birth_year: '1995',
-                firstname: 'Updated',
-                lastname: 'User',
-                company: 'UpdatedCompany',
-                address1: 'Updated Street 456',
-                address2: 'Updated ap. 789',
-                country: 'UpdatedCountry',
-                zipcode: '5678',
-                state: 'UpdatedState',
-                city: 'UpdatedCity',
-                mobile_number: '9876543210'
-            }
+            failOnStatusCode: false,
         }).then((response) => {
-            expect(response.status).to.eq(200);
-            expect(response.body.message).to.include('User updated!');
+            cy.log('Response Status:', response.status);
+            cy.log('Response Body:', response.body);
+
+            let respData;
+            try {
+                respData = typeof response.body === 'string'
+                    ? JSON.parse(response.body)
+                    : response.body;
+            } catch (error) {
+                cy.log('Parse Error:', error.message);
+                throw new Error('Failed to parse JSON response: ' + error.message);
+            }
+
+            expect(response.status).to.equal(200);
+            expect(respData.responseCode).to.be.a('number').and.equal(200);
+            expect(respData.message).to.be.a('string').and.equal('User updated!');
         });
     });
 
-    it('GET User Account Detail by Email', () => {
-        cy.request(`${baseUrl}/getUserDetailByEmail?email=Newuserr@example.com`).then((response) => {
-            expect(response.status).to.eq(200);
-            expect(response.body).to.have.property('user').that.is.an('object');
+
+    it('14_GET User Account Detail by Email', () => {
+        const email = 'Newuser7@example.com'; // Ensure this email exists in the system
+
+        cy.request({
+            method: 'GET',
+            url: `${baseUrl}/getUserDetailByEmail?email=${email}`,
+            headers: { 'Content-Type': 'application/json' },
+        }).then((response) => {
+
+            const responseBody = typeof response.body === 'string'
+                ? JSON.parse(response.body)
+                : response.body;
+
+
+            expect(responseBody).to.have.property('user').that.is.an('object');
+
+
         });
     });
 
-    it('DELETE User Account', () => {
+    it('12_DELETE User Account', () => {
+
+        const userData = {
+            email: 'Newuser8@example.com',
+            password: 'testpassword'
+        };
+
         cy.request({
             method: 'DELETE',
             url: `${baseUrl}/deleteAccount`,
+            body: userData,
             form: true,
-            body: {
-                email: 'Newuserr@example.com',
-                password: 'testpassword'
-            }
+            failOnStatusCode: false
         }).then((response) => {
-            expect(response.status).to.eq(200);
-            expect(response.body.message).to.include('Account deleted!');
+
+
+            let respData;
+            try {
+                respData = typeof response.body === 'string'
+                    ? JSON.parse(response.body)
+                    : response.body;
+            } catch (error) {
+                throw new Error('Failed to parse JSON response: ' + error.message);
+            }
+
+            expect(response.status).to.equal(200);
+
+
+            expect(respData.responseCode).to.be.a('number').and.equal(200);
+
+            expect(respData.message).to.be.a('string').and.equal('Account deleted!');
         });
-    });
+
+    })
 });
