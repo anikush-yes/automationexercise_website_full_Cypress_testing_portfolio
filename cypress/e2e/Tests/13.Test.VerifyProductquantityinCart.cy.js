@@ -14,7 +14,7 @@ describe(' Verify Product quantity in Cart', () => {
 
         cy.get('#quantity').invoke('val', '4').trigger('change');
 
-       // Cy.get('#quantity').clear().type('4')
+       // Cy.get('#quantity').clear().type('4') ?
 
        cy.contains('Add to cart').click();
 
