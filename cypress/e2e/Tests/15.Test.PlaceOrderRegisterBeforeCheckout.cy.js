@@ -22,7 +22,7 @@ cy.get("a[href='/product_details/2']").click();
 
        cy.contains('Cart').click();
 
-       cy.visit('https://automationexercise.com/view_cart')
+    
        cy.url().should('include', '/view_cart'); 
        cy.contains('Shopping Cart').should('be.visible'); 
 
