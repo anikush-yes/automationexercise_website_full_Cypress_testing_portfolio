@@ -1,4 +1,7 @@
 # 🚀 Automated Testing with Cypress
+[![Cypress](https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg)](https://www.cypress.io/)
+[![API Tests](https://img.shields.io/badge/API%20Tests-14%20passing-brightgreen.svg)]()
+[![UI Tests](https://img.shields.io/badge/UI%20Tests-20%20passing-brightgreen.svg)]() 
 
 ## 📌 Overview
 
