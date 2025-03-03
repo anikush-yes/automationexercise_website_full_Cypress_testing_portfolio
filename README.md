@@ -73,22 +73,22 @@ The API test suite includes 14 test cases that verify:
 * Install [Node.js](https://nodejs.org/)
   
 * Install Cypress globally:
- ```sh
+```sh
 npm install -g cypress
-  ```
+```
 * Or install Cypress locally within the project:
 ```sh
 npm install cypress --save-dev
-  ```
+```
 * Clone this repository and navigate to the project directory:
-  ```sh
+```sh
 git clone https://anikush-yes.github.io/automationexercise.com/cypress_tests)
 cd automationexercise_website_full_Cypress_testing_portfolio
-  ```
+```
 * Run Cypress Test Runner:
-  ```sh
+```sh
 npx cypress open
-  ```
+```
 
 ## 📝 Test Examples
 
