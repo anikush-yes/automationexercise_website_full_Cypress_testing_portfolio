@@ -1,142 +1,66 @@
 # 🚀 Automated Testing with Cypress
 
-# 📌 Overview
+## 📌 Overview
 
-This project contains automated test scripts using Cypress for testing various functionalities of the Automation Exercise website.
+This project contains automated test scripts using [Cypress](https://www.cypress.io/) for testing various functionalities of the [Automation Exercise](https://automationexercise.com/) website.
 
-Table of Contents
+## Table of Contents
 
-Overview
+[Features](#features)
 
-Prerequisites
+[Test Coverage](#test-coverage)
 
-Project Structure
+[Project Structure](#project-structure)
 
-Test Suites
+[Getting Started](#getting-started)
 
-Running Tests
+[Running Tests](#running-tests)
 
-Notes
+[Custom Commands](#custom-commands)
 
-Contribution
+[Contributing](#contributing)
 
-License
+[License](#license)
 
-Prerequisites
+## 🌟 Features
 
-Project Structure
+- ✅ Automated end-to-end testing with Cypress
 
-Test Suites
+- 🚀 Fast and reliable test execution
 
-UI Functional Tests
+- 🔍 Comprehensive coverage of UI, authentication, and API functionality
 
-API Tests
+- 🛒 E-commerce workflow testing (product browsing, cart, checkout)
 
-Test Examples
+- 📩 Subscription and contact form validation
 
+- 🔄 API testing for user and product management
 
+- 📊 Detailed assertions and response validation
 
-Running Tests
+- 🔧 Easily extendable with custom commands
 
-Notes
 
-Contribution
+## ⚙️ Prerequisites
 
-License📌 Overview
+- Install [Node.js](https://nodejs.org/)
+- Install Cypress globally or locally:
+  ```sh
+  npm install cypress --save-dev
+  ```
+- Clone this repository and navigate to the project directory:
+  ```sh
+  ```git clone https://anikush-yes.github.io/automationexercise.com/cypress_tests)>
+  cd <C:\FinalWorks\automationexercise_website_full_Cypress_testing_portfolio>
+  ```
+- Run Cypress Test Runner:
+  ```sh
+  npx cypress open
+  ```
 
-⚙️ Prerequisites
+## 📂 Project Structure
 
-📂 Project Structure
-
-🧪 Test Suites
-
-🔐 User Authentication Tests
-
-🖥️ UI Functional Tests
-
-🔗 API Tests
-
-📝 Test Examples
-
-🔐 User Registration Test
-
-🖥️ UI Test - Searching for a Product
-
-🔗 API Test - Get All Products
-
-▶️ Running Tests
-
-📌 Notes
-
-🤝 Contribution
-
-📜 License
-
-🌟 Features
-
-End-to-end testing with Cypress
-
-Fast execution and reliable results
-
-UI, authentication, and API coverage
-
-Shopping cart and checkout testing
-
-API validation and response testingAutomated end-to-end testing with Cypress
-
-Fast and reliable test execution
-
-Comprehensive coverage of UI, authentication, and API functionality
-
-E-commerce workflow testing (product browsing, cart, checkout)
-
-Subscription and contact form validation
-
-API testing for user and product management
-
-Detailed assertions and response validation
-
-Easily extendable with custom commands
-
-✅ Automated end-to-end testing with Cypress
-
-🚀 Fast and reliable test execution
-
-🔍 Comprehensive coverage of UI, authentication, and API functionality
-
-🛒 E-commerce workflow testing (product browsing, cart, checkout)
-
-📩 Subscription and contact form validation
-
-🔄 API testing for user and product management
-
-📊 Detailed assertions and response validation
-
-🔧 Easily extendable with custom commands
-
-📌 Overview
-
-This project contains automated test scripts using Cypress for testing various functionalities of the Automation Exercise website.
-
-⚙️ Prerequisites
-
-Install Node.js
-
-Install Cypress globally or locally:
-
-npm install cypress --save-dev
-
-Clone this repository and navigate to the project directory:
-
-git clone <repository-url>
-cd <project-directory>
-
-Run Cypress Test Runner:
-
-npx cypress open
-
-📂 Project Structure
-
+```
 project-root/
 │── cypress/
 │   ├── e2e/          # Contains all test cases
@@ -149,7 +73,9 @@ project-root/
 │── cypress.json              # Cypress configuration file
 │── package.json              # Project dependencies and scripts
 │── README.md                 # Project documentation
+```
 
+```
 project-root/
 │── cypress/
 │   ├── e2e/          # Contains all test cases
@@ -161,61 +87,47 @@ project-root/
 │── cypress.json              # Cypress configuration file
 │── package.json              # Project dependencies and scripts
 │── README.md                 # Project documentation
+```
 
-🧪 Test Suites
+## 🧪 Test Suites
 
-🖥️ UI Functional Tests
+### 🖥️ UI Functional Tests
 
 The UI test suite includes 20 test cases covering:
 
-🛍️ User registration, login, and authentication flows
-
-🔑 Login with valid and invalid credentials
-
-🚪 Logout functionality
-
-🛒 Product browsing, searching, and category filtering
-
-🏷️ Shopping cart operations such as adding, updating, and removing items
-
-📦 Checkout process with user registration and login before or during checkout
-
-✉️ Subscription functionality on different pages
-
-📩 Contact form submission
+- 🛍️ User registration, login, and authentication flows
+- 🔑 Login with valid and invalid credentials
+- 🚪 Logout functionality
+- 🛒 Product browsing, searching, and category filtering
+- 🏷️ Shopping cart operations such as adding, updating, and removing items
+- 📦 Checkout process with user registration and login before or during checkout
+- ✉️ Subscription functionality on different pages
+- 📩 Contact form submission
 
 The UI test suite includes 15 test cases covering:
 
-🛍️ Product browsing, searching, and category filtering
+- 🛍️ Product browsing, searching, and category filtering
+- 🛒 Shopping cart operations such as adding, updating, and removing items
+- 🏷️ Checkout process with user registration and login before or during checkout
+- ✉️ Subscription functionality on different pages
+- 📩 Contact form submission
 
-🛒 Shopping cart operations such as adding, updating, and removing items
-
-🏷️ Checkout process with user registration and login before or during checkout
-
-✉️ Subscription functionality on different pages
-
-📩 Contact form submission
-
-🔗 API Tests
+### 🔗 API Tests
 
 The API test suite includes 14 test cases that verify:
 
-📦 Product listing and search functionality
+- 📦 Product listing and search functionality
+- 🏷️ Brand management operations
+- 🔐 User authentication flows
+- 📝 Account creation, update, and deletion
+- ✅ Response validation for both successful and error scenarios
+- 🔄 Support for different HTTP methods (GET, POST, PUT, DELETE)
 
-🏷️ Brand management operations
+## 📝 Test Examples
 
-🔐 User authentication flows
+### Example: 🔐 User Registration Test
 
-📝 Account creation, update, and deletion
-
-✅ Response validation for both successful and error scenarios
-
-🔄 Support for different HTTP methods (GET, POST, PUT, DELETE)
-
-📝 Test Examples
-
-Example: 🔐 User Registration Test
-
+```javascript
 describe('User Registration', () => {
   it('Should register a new user successfully', () => {
     cy.visit('https://automationexercise.com/');
@@ -226,9 +138,11 @@ describe('User Registration', () => {
     cy.contains('Enter Account Information').should('be.visible');
   });
 });
+```
 
-Example: 🖥️ UI Test - Searching for a Product
+### Example: 🖥️ UI Test - Searching for a Product
 
+```javascript
 describe('Search Product', () => {
   it('Should allow users to search for a product', () => {
     cy.visit('https://automationexercise.com/');
@@ -238,9 +152,11 @@ describe('Search Product', () => {
     cy.contains('Searched Products').should('be.visible');
   });
 });
+```
 
-Example: 🔗 API Test - Get All Products
+### Example: 🔗 API Test - Get All Products
 
+```javascript
 describe('API Test - Get All Products', () => {
   it('Should retrieve all products successfully', () => {
     cy.request('https://automationexercise.com/api/productsList').then((response) => {
@@ -249,57 +165,79 @@ describe('API Test - Get All Products', () => {
     });
   });
 });
+```
 
-▶️ Running Tests
+## ▶️ Running Tests
 
-Run All Tests
+### Run All Tests
 
+```sh
 npx cypress run
+```
 
-Run API Tests Only
+### Run API Tests Only
 
+```sh
 npx cypress run --spec "cypress/e2e/apiTest.cy.js"
+```
 
-Run UI Tests Only
+### Run UI Tests Only
 
+```sh
 npx cypress run --spec "cypress/e2e/ui-tests.cy.js"
+```
 
-Open Cypress Test Runner
+### Open Cypress Test Runner
 
+````sh
 npx cypress open
 ```### Run All Tests
 ```sh
 npx cypress run
+````
 
-Run API Tests Only
+### Run API Tests Only
 
+```sh
 npx cypress run --spec "cypress/e2e/API.cy.js"
+```
 
-Run UI Tests Only
+### Run UI Tests Only
 
+```sh
 npx cypress run --spec "cypress/e2e/Tests.cy.js"
+```
 
-Open Cypress Test Runner
+### Open Cypress Test Runner
 
+````sh
 npx cypress open
 ```To run tests in headless mode:
 
 ```sh
 npx cypress run
+````
 
 To run a specific test file:
 
+```sh
 npx cypress run --spec cypress/e2e/<test-file>.js
+```
 
-📌 Notes
+## 📌 Notes
 
-Cypress is configured to test against https://automationexercise.com/
+- Cypress is configured to test against `https://automationexercise.com/`
+- Some tests require account creation and deletion during execution.
 
-Some tests require account creation and deletion during execution.
-
-🤝 Contribution
+## 🤝 Contribution
 
 Feel free to contribute by adding more test cases or improving existing ones. Fork the repository, make changes, and submit a pull request.
+
+## 📜 License
+
+This project is open-source and available under the [MIT License](LICENSE).
+
+
 
 📜 License
 
