@@ -78,16 +78,16 @@ npm install -g cypress
   ```
 * Or install Cypress locally within the project:
 ```sh
-  npm install cypress --save-dev
+npm install cypress --save-dev
   ```
 * Clone this repository and navigate to the project directory:
   ```sh
-  git clone https://anikush-yes.github.io/automationexercise.com/cypress_tests)
-  cd automationexercise_website_full_Cypress_testing_portfolio
+git clone https://anikush-yes.github.io/automationexercise.com/cypress_tests)
+cd automationexercise_website_full_Cypress_testing_portfolio
   ```
 * Run Cypress Test Runner:
   ```sh
-  npx cypress open
+npx cypress open
   ```
 
 ## 📝 Test Examples
