@@ -174,9 +174,9 @@ Feel free to contribute by adding more test cases or improving existing ones. Fo
 
 ## 📜 License
 
-This project is open-source and available under the [MIT License](LICENSE).
+This project is open-source and available under the MIT License.
 
-⭐ If you like this project, don't forget to give it a star! ⭐
+***⭐ If you like this project, don't forget to give it a star! ⭐*** 
 
 
 
