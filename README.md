@@ -66,7 +66,7 @@ The API test suite includes 14 test cases that verify:
 - ✅ Response validation for both successful and error scenarios
 - 🔄 Support for different HTTP methods (GET, POST, PUT, DELETE)
 
-# Getting Started
+# 🏁 Getting Started
 
 ## ⚙️ Prerequisites and Installation
 
