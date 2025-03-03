@@ -71,10 +71,13 @@ The API test suite includes 14 test cases that verify:
 ## ⚙️ Prerequisites
 
 * Install [Node.js](https://nodejs.org/)
+  
 * Install Cypress globally:
  ```sh
 npm install -g cypress
   ```
+* Or install Cypress locally within the project:
+```sh
   npm install cypress --save-dev
   ```
 * Clone this repository and navigate to the project directory:
