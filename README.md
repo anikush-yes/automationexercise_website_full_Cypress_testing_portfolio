@@ -4,24 +4,6 @@
 
 This project contains automated test scripts using [Cypress](https://www.cypress.io/) for testing various functionalities of the [Automation Exercise](https://automationexercise.com/) website.
 
-## Table of Contents
-
-[Features](#features)
-
-[Test Coverage](#test-coverage)
-
-[Project Structure](#project-structure)
-
-[Getting Started](#getting-started)
-
-[Running Tests](#running-tests)
-
-[Custom Commands](#custom-commands)
-
-[Contributing](#contributing)
-
-[License](#license)
-
 ## 🌟 Features
 
 - ✅ Automated end-to-end testing with Cypress
@@ -43,17 +25,17 @@ This project contains automated test scripts using [Cypress](https://www.cypress
 
 ## ⚙️ Prerequisites
 
-- Install [Node.js](https://nodejs.org/)
-- Install Cypress globally or locally:
+* Install [Node.js](https://nodejs.org/)
+* Install Cypress globally or locally:
   ```sh
   npm install cypress --save-dev
   ```
-- Clone this repository and navigate to the project directory:
+* Clone this repository and navigate to the project directory:
   ```sh
-  git clone https://anikush-yes.github.io/automationexercise.com/cypress_tests)>
+  git clone https://anikush-yes.github.io/automationexercise.com/cypress_tests)
   cd automationexercise_website_full_Cypress_testing_portfolio
   ```
-- Run Cypress Test Runner:
+* Run Cypress Test Runner:
   ```sh
   npx cypress open
   ```
