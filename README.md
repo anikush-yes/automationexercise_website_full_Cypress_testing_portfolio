@@ -68,7 +68,7 @@ The API test suite includes 14 test cases that verify:
 
 # Getting Started
 
-## ⚙️ Prerequisites
+## ⚙️ Prerequisites and Installation
 
 * ***Install*** [Node.js](https://nodejs.org/)
   
@@ -114,7 +114,6 @@ npx cypress run --spec "cypress/e2e/API_Test.cy.js"
 ```sh
 npx cypress run --spec cypress/e2e/<test-file>.js
 ```
-
 
 
 ## 📝 Test Examples
