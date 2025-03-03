@@ -50,7 +50,7 @@ This project contains automated test scripts using [Cypress](https://www.cypress
   ```
 - Clone this repository and navigate to the project directory:
   ```sh
-  ``git clone https://anikush-yes.github.io/automationexercise.com/cypress_tests)>
+  git clone https://anikush-yes.github.io/automationexercise.com/cypress_tests)>
   cd <C:\FinalWorks\automationexercise_website_full_Cypress_testing_portfolio>
   ```
 - Run Cypress Test Runner:
