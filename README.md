@@ -90,6 +90,33 @@ cd automationexercise_website_full_Cypress_testing_portfolio
 npx cypress open
 ```
 
+## ▶️ Running Tests
+
+### Run All Tests
+
+```sh
+npx cypress run
+```
+
+### Run UI Tests Only
+
+```sh
+npx cypress run --spec "cypress/e2e/Tests.cy.js"
+```
+### Run API Tests Only
+
+```sh
+npx cypress run --spec "cypress/e2e/API_Test.cy.js"
+```
+
+### To run a specific test file:
+
+```sh
+npx cypress run --spec cypress/e2e/<test-file>.js
+```
+
+
+
 ## 📝 Test Examples
 
 ### Example: 🔐 User Registration Test
@@ -132,45 +159,6 @@ describe('API Test - Get All Products', () => {
     });
   });
 });
-```
-
-## ▶️ Running Tests
-
-### Run All Tests
-
-```sh
-npx cypress run
-```
-
-### Run UI Tests Only
-
-```sh
-npx cypress run --spec "cypress/e2e/Tests.cy.js"
-```
-### Run API Tests Only
-
-```sh
-npx cypress run --spec "cypress/e2e/API_Test.cy.js"
-```
-
-
-### Open Cypress Test Runner
-
-````sh
-npx cypress open
-```### Run All Tests
-```sh
-npx cypress run
-````
-
-````sh
-npx cypress open
-```To run tests in headless mode:
-
-### To run a specific test file:
-
-```sh
-npx cypress run --spec cypress/e2e/<test-file>.js
 ```
 
 ## 📌 Notes
