@@ -106,16 +106,13 @@ describe('Place Order: Register while Checkout', () => {
 
         cy.contains('Pay and Confirm Order').click();
 
-     
-        //         cy.get('form#payment-form').then(($form) => {
-        //             console.log('Intercepted request:', interception);
-        //         });
+        cy.get("#success_message > .alert-success").should("contain.text", "Your order has been placed successfully!");
 
-        //         cy.get('#success_message', { timeout: 10000 })
-        //             .should('be.visible')
-        //             .and('contain.text', 'Your order has been placed successfully!');
+        cy.get('form#payment-form').then(($form) => {
+            $form.off('submit');
+        });
+        cy.get('[data-qa="pay-button"]').click();
 
-        cy.contains('Order Placed!').should('exist').and('be.visible');
         cy.contains('Delete Account').click();
         cy.contains('Account Deleted!').should('be.visible');
         cy.contains('Continue').click();
