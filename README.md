@@ -1,8 +1,26 @@
-🚀 Automated Testing with Cypress
+# 🚀 Automated Testing with Cypress
+
+# 📌 Overview
+
+This project contains automated test scripts using Cypress for testing various functionalities of the Automation Exercise website.
 
 Table of Contents
 
 Overview
+
+Prerequisites
+
+Project Structure
+
+Test Suites
+
+Running Tests
+
+Notes
+
+Contribution
+
+License
 
 Prerequisites
 
@@ -286,4 +304,5 @@ Feel free to contribute by adding more test cases or improving existing ones. Fo
 📜 License
 
 This project is open-source and available under the MIT License.
+
 
