@@ -51,7 +51,7 @@ This project contains automated test scripts using [Cypress](https://www.cypress
 - Clone this repository and navigate to the project directory:
   ```sh
   git clone https://anikush-yes.github.io/automationexercise.com/cypress_tests)>
-  cd <C:\FinalWorks\automationexercise_website_full_Cypress_testing_portfolio>
+  cd automationexercise_website_full_Cypress_testing_portfolio
   ```
 - Run Cypress Test Runner:
   ```sh
@@ -75,20 +75,6 @@ project-root/
 │── README.md                 # Project documentation
 ```
 
-```
-project-root/
-│── cypress/
-│   ├── e2e/          # Contains all test cases
-│   │   ├── tests/            # 20 UI test cases
-│   │   ├── api-tests/        # API tests stored separately
-│   ├── fixtures/             # Test data and JSON fixtures
-│   ├── plugins/              # Cypress plugins
-│   ├── support/              # Custom commands and configurations
-│── cypress.json              # Cypress configuration file
-│── package.json              # Project dependencies and scripts
-│── README.md                 # Project documentation
-```
-
 ## 🧪 Test Suites
 
 ### 🖥️ UI Functional Tests
@@ -101,14 +87,6 @@ The UI test suite includes 20 test cases covering:
 - 🛒 Product browsing, searching, and category filtering
 - 🏷️ Shopping cart operations such as adding, updating, and removing items
 - 📦 Checkout process with user registration and login before or during checkout
-- ✉️ Subscription functionality on different pages
-- 📩 Contact form submission
-
-The UI test suite includes 15 test cases covering:
-
-- 🛍️ Product browsing, searching, and category filtering
-- 🛒 Shopping cart operations such as adding, updating, and removing items
-- 🏷️ Checkout process with user registration and login before or during checkout
 - ✉️ Subscription functionality on different pages
 - 📩 Contact form submission
 
@@ -175,17 +153,17 @@ describe('API Test - Get All Products', () => {
 npx cypress run
 ```
 
-### Run API Tests Only
-
-```sh
-npx cypress run --spec "cypress/e2e/apiTest.cy.js"
-```
-
 ### Run UI Tests Only
 
 ```sh
-npx cypress run --spec "cypress/e2e/ui-tests.cy.js"
+npx cypress run --spec "cypress/e2e/Tests.cy.js"
 ```
+### Run API Tests Only
+
+```sh
+npx cypress run --spec "cypress/e2e/API_Test.cy.js"
+```
+
 
 ### Open Cypress Test Runner
 
@@ -196,29 +174,11 @@ npx cypress open
 npx cypress run
 ````
 
-### Run API Tests Only
-
-```sh
-npx cypress run --spec "cypress/e2e/API.cy.js"
-```
-
-### Run UI Tests Only
-
-```sh
-npx cypress run --spec "cypress/e2e/Tests.cy.js"
-```
-
-### Open Cypress Test Runner
-
 ````sh
 npx cypress open
 ```To run tests in headless mode:
 
-```sh
-npx cypress run
-````
-
-To run a specific test file:
+### To run a specific test file:
 
 ```sh
 npx cypress run --spec cypress/e2e/<test-file>.js
