@@ -93,7 +93,7 @@ cd automationexercise_website_full_Cypress_testing_portfolio
 npx cypress open
 ```
 
-## ▶️ Running Tests
+## 👟 Running Tests
 
 ### Run All Tests
 
