@@ -106,14 +106,8 @@ describe('Place Order: Register while Checkout', () => {
 
         cy.contains('Pay and Confirm Order').click();
 
-        //16. Verify success message 'Your order has been placed successfully!'(Not possible to complete)
-        // cy.contains('Pay and Confirm Order').should('be.visible').click();
-
-        // cy.intercept('POST', '/payment').as('paymentRequest');
-
-        //         cy.get('#payment-form').submit();
-
-        //         cy.wait('@paymentRequest', { timeout: 10000 }).then((interception) => {
+     
+        //         cy.get('form#payment-form').then(($form) => {
         //             console.log('Intercepted request:', interception);
         //         });
 
