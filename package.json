@@ -1,14 +1,16 @@
 {
   "name": "automationexercise_website_full_cypress_testing_portfolio",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "cypress open",
+    "test": "cypress run",
+    "start": "cypress open"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
     "cypress": "^14.0.3",
     "cypress-file-upload": "^5.0.8"

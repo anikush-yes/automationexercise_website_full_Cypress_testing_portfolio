@@ -104,12 +104,19 @@ describe('Place Order: Register while Checkout', () => {
 
 
 
-        cy.contains('Pay and Confirm Order').click();
-
-        cy.get("#success_message > .alert-success").should("contain.text", "Your order has been placed successfully!");
-
         cy.get('form#payment-form').then(($form) => {
-            $form.off('submit');
+            $form.on('submit', (e) => {
+                e.preventDefault(); // Stop the form from being submitted automatically
+            });
+          });
+    
+          cy.get('[data-qa="pay-button"]').click();
+       
+    
+         cy.get("#success_message > .alert-success").should("contain.text", "Your order has been placed successfully!");
+    
+         cy.get('form#payment-form').then(($form) => {
+          $form.off('submit');
         });
         cy.get('[data-qa="pay-button"]').click();
 
