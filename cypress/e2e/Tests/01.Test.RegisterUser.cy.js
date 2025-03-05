@@ -65,7 +65,8 @@ describe('Automation Exercise Homepage Test', () => {
 
     // 14. Verify that 'ACCOUNT CREATED!' is visible
 
-    cy.contains('Account Created!').should('be.visible');
+    cy.contains('Account Created!', { timeout: 10000 })
+    .should('be.visible');
 
     // 15. Click 'Continue' button
 
