@@ -113,7 +113,7 @@ describe('Place Order: Register while Checkout', () => {
           cy.get('[data-qa="pay-button"]').click();
        
     
-         cy.get("#success_message > .alert-success").should("contain.text", "Your order has been placed successfully!");
+         cy.get("#success_message > .alert-success", { timeout: 2000 }).should("contain.text", "Your order has been placed successfully!");
     
          cy.get('form#payment-form').then(($form) => {
           $form.off('submit');
