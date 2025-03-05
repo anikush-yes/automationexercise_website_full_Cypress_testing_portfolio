@@ -31,8 +31,9 @@ describe('Place Order: Login before Checkout', () => {
 
             cy.contains('Cart').click();
 
-            cy.visit('https://automationexercise.com/view_cart')
-            cy.url().should('include', '/view_cart');
+            cy.visit('https://automationexercise.com/view_cart');
+            cy.url().should('include', '/view_cart'); // Tai jau turėtų veikti
+            cy.get('body').should('not.have.class', 'loading');
 
             cy.contains('Proceed To Checkout').click();
             cy.get('#address_delivery').within(() => {
