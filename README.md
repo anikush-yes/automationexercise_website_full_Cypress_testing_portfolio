@@ -1,4 +1,4 @@
-# 🚀 Cypress UI Tests | API Tests (with Newman for API Pipeline)
+'# 🚀 Cypress UI Tests | API Tests (with Newman for API Pipeline)
 [![Cypress](https://img.shields.io/badge/Tested%20with-Cypress-04C38E.svg)](https://www.cypress.io/)
 [![UI Tests](https://img.shields.io/badge/UI%20Tests-20%20passing-brightgreen.svg)]() 
 [![API Tests](https://img.shields.io/badge/API%20Tests-14%20passing-brightgreen.svg)]()
@@ -68,7 +68,7 @@ The API test suite includes 14 test cases that verify:
 - 📝 Account creation, update, and deletion
 - ✅ Response validation for both successful and error scenarios
 - 🔄 Support for different HTTP methods (GET, POST, PUT, DELETE)
-- **Pipeline Integration**: API tests executed in the pipeline using Newman, ensuring continuous integration and deployment.
+- 🪈**Pipeline Integration**: API tests executed in the pipeline using Newman, ensuring continuous integration and deployment.
 
 # 🏁 Getting Started
 
