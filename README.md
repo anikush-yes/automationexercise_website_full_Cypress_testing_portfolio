@@ -5,8 +5,8 @@
 
 ## 📌 Overview
 
-This project contains automated test scripts using [Cypress](https://www.cypress.io/) for testing various functionalities of the [Automation Exercise](https://automationexercise.com/) website.
-
+This project containsautomated UI and API testing [Cypress](https://www.cypress.io/) for testing various functionalities of the [Automation Exercise](https://automationexercise.com/) website.
+It includes 20 UI test cases covering authentication, product browsing, cart, checkout, and forms, along with 14 API tests validating user and product management. API tests are integrated into the pipeline using Newman, ensuring continuous validation. The structured framework allows for fast execution, detailed assertions, and easy extensibility.
 ## 🌟 Features
 
 - ✅ Automated end-to-end testing with Cypress
