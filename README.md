@@ -1,12 +1,12 @@
-# 🚀 Automated Testing with Cypress
+'# 🚀 Cypress UI Tests | API Tests (with Newman for API Pipeline)
 [![Cypress](https://img.shields.io/badge/Tested%20with-Cypress-04C38E.svg)](https://www.cypress.io/)
 [![UI Tests](https://img.shields.io/badge/UI%20Tests-20%20passing-brightgreen.svg)]() 
 [![API Tests](https://img.shields.io/badge/API%20Tests-14%20passing-brightgreen.svg)]()
 
 ## 📌 Overview
 
-This project contains automated test scripts using [Cypress](https://www.cypress.io/) for testing various functionalities of the [Automation Exercise](https://automationexercise.com/) website.
-
+This project containsautomated UI and API testing [Cypress](https://www.cypress.io/) for testing various functionalities of the [Automation Exercise](https://automationexercise.com/) website.
+It includes 20 UI test cases covering authentication, product browsing, cart, checkout, and forms, along with 14 API tests validating user and product management. API tests are integrated into the pipeline using Newman, ensuring continuous validation. The structured framework allows for fast execution, detailed assertions, and easy extensibility.
 ## 🌟 Features
 
 - ✅ Automated end-to-end testing with Cypress
@@ -19,7 +19,7 @@ This project contains automated test scripts using [Cypress](https://www.cypress
 
 - 📩 Subscription and contact form validation
 
-- 🔄 API testing for user and product management
+- 🔄 API testing for user and product management using Newman for pipeline integration
 
 - 📊 Detailed assertions and response validation
 
@@ -68,6 +68,7 @@ The API test suite includes 14 test cases that verify:
 - 📝 Account creation, update, and deletion
 - ✅ Response validation for both successful and error scenarios
 - 🔄 Support for different HTTP methods (GET, POST, PUT, DELETE)
+- 🪈**Pipeline Integration**: API tests executed in the pipeline using Newman, ensuring continuous integration and deployment.
 
 # 🏁 Getting Started
 
@@ -117,7 +118,10 @@ npx cypress run --spec "cypress/e2e/API_Test.cy.js"
 ```sh
 npx cypress run --spec cypress/e2e/<test-file>.js
 ```
-
+### Run API tests only (executed in the pipeline with Newman):
+``` npx cypress run --spec "cypress/e2e/API_Test.cy.js"
+newman run api_tests_collection.json -e api_tests_environment.json
+```
 
 ## 📝 Test Examples
 
