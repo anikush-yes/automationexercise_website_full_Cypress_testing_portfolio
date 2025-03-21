@@ -6,7 +6,7 @@
 
 ## 📌 Overview
 
-This project compares automated UI and API testing for the Automation Exercise website using Cypress. It includes 20 UI tests and 14 API tests, covering authentication, product management, and checkout. API tests are implemented in Cypress for seamless integration.
+This project compares automated **UI** and **API** testing for the Automation Exercise website https://automationexercise.com/ using **Cypress**. It includes 20 UI tests and 14 API tests, covering authentication, product management, and checkout. **API tests are implemented in Cypress** for seamless integration.
 
 ## 🌟 Features
 
@@ -114,7 +114,7 @@ newman run api_tests_collection.json -e api_tests_environment.json
 ```
 ### Run the tests using GitHub Actions
 
-``` Manually trigger workflow "Postman Newman Tests" from the _GitHub Actions_  tab via **Run workflow**```
+* Manually trigger workflow "Postman Newman Tests" from the **GitHub Actions**  tab via **Run workflow**```
 
 ## 📝 Test Examples
 
