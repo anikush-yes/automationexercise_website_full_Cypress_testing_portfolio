@@ -6,7 +6,7 @@
 
 ## 📌 Overview
 
-This project compares automated **UI** and **API** testing for the Automation Exercise website https://automationexercise.com/ using **Cypress**. It includes 20 UI tests and 14 API tests, covering authentication, product management, and checkout. **API tests are implemented in Cypress** for seamless integration.
+This project compares automated **UI** and **API** testing for the **Automation Exercise** website https://automationexercise.com/ using **Cypress**. It includes **20 UI** tests and **14 API** tests, covering authentication, product management, and checkout. **API tests are implemented in Cypress** for seamless integration.
 
 ## 🌟 Features
 
