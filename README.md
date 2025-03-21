@@ -1,29 +1,20 @@
-'# 🚀 Cypress UI Tests | API Tests (with Newman for API Pipeline)
+# 🚀 Automated Test Suite for End-to-End Validation
+
 [![Cypress](https://img.shields.io/badge/Tested%20with-Cypress-04C38E.svg)](https://www.cypress.io/)
 [![UI Tests](https://img.shields.io/badge/UI%20Tests-20%20passing-brightgreen.svg)]() 
 [![API Tests](https://img.shields.io/badge/API%20Tests-14%20passing-brightgreen.svg)]()
 
 ## 📌 Overview
 
-This project containsautomated UI and API testing [Cypress](https://www.cypress.io/) for testing various functionalities of the [Automation Exercise](https://automationexercise.com/) website.
-It includes 20 UI test cases covering authentication, product browsing, cart, checkout, and forms, along with 14 API tests validating user and product management. API tests are integrated into the pipeline using Newman, ensuring continuous validation. The structured framework allows for fast execution, detailed assertions, and easy extensibility.
+This project compares automated UI and API testing for the Automation Exercise website using Cypress. It includes 20 UI tests and 14 API tests, covering authentication, product management, and checkout. API tests are implemented in Cypress for seamless integration.
+
 ## 🌟 Features
 
-- ✅ Automated end-to-end testing with Cypress
-
-- 🚀 Fast and reliable test execution
-
-- 🔍 Comprehensive coverage of UI, authentication, and API functionality
-
-- 🛒 E-commerce workflow testing (product browsing, cart, checkout)
-
-- 📩 Subscription and contact form validation
-
-- 🔄 API testing for user and product management using Newman for pipeline integration
-
-- 📊 Detailed assertions and response validation
-
-- 🔧 Easily extendable with custom commands
+- Dual Testing Approach: Complete API and UI test coverage
+- Custom Commands: Reusable functions for common operations
+- Test Data Management: Efficient handling of user data
+- Clean Architecture: Well-structured test organization
+- Comprehensive Assertions: Thorough validation of application behavior
 
 
 ## 📂 Project Structure
@@ -68,7 +59,6 @@ The API test suite includes 14 test cases that verify:
 - 📝 Account creation, update, and deletion
 - ✅ Response validation for both successful and error scenarios
 - 🔄 Support for different HTTP methods (GET, POST, PUT, DELETE)
-- 🪈**Pipeline Integration**: API tests executed in the pipeline using Newman, ensuring continuous integration and deployment.
 
 # 🏁 Getting Started
 
