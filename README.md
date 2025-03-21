@@ -1,4 +1,4 @@
-# 🚀 Automated Test Suite for End-to-End Validation
+# 🚀 Automated Test Suite for UI Validation
 
 [![Cypress](https://img.shields.io/badge/Tested%20with-Cypress-04C38E.svg)](https://www.cypress.io/)
 [![UI Tests](https://img.shields.io/badge/UI%20Tests-20%20passing-brightgreen.svg)]() 
@@ -112,6 +112,9 @@ npx cypress run --spec cypress/e2e/<test-file>.js
 ``` npx cypress run --spec "cypress/e2e/API_Test.cy.js"
 newman run api_tests_collection.json -e api_tests_environment.json
 ```
+### Run the tests using GitHub Actions*
+
+Manually trigger workflow "Postman Newman Tests" from the **GitHub Actions** tab via **"Run workflow"**
 
 ## 📝 Test Examples
 
