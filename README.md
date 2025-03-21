@@ -114,7 +114,7 @@ newman run api_tests_collection.json -e api_tests_environment.json
 ```
 ### Run the tests using GitHub Actions
 
-``` Manually trigger workflow "Postman Newman Tests" from the **GitHub Actions** tab via **"Run workflow"**```
+``` Manually trigger workflow "Postman Newman Tests" from the _GitHub Actions_  tab via **Run workflow**```
 
 ## 📝 Test Examples
 
